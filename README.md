@@ -1,1 +1,8 @@
-# tl2-tp1-2023-Javi-zafiro
+2.A
+
+*)
+cadeteria -agregacion- cadete
+cadete -agregacion- pedido
+pedido -composicion- cliente
+
+*)
