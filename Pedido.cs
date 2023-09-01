@@ -1,20 +1,25 @@
 namespace clasePedido;
 using claseCliente;
 
+enum Estados
+{
+    Pendiente, Entregado
+}
 class Pedido
 {
     private int nro;
     private string obs;
     private Cliente nuevo=null;
-    private string estado;
+    private Estados estado ;
 
-    public string Estado{get=> estado; set=> estado=value;}
+    
     public int Nro{get=> nro; set=> nro=value;}
+    public Estados Estado { get => estado; set => estado = value; }
 
-    public Pedido(int numero, string observacion, string est, string nom, string dir, int tel, string refe){
+    public Pedido(int numero, string observacion, Estados est, string nom, string dir, int tel, string refe){
         nro=numero;
         obs=observacion;
-        estado=est;
+        Estado=est;
         nuevo=new Cliente(nom, dir, tel, refe);
     }
 
@@ -25,5 +30,15 @@ class Pedido
     public void VerDatosCliente(){
         Console.WriteLine(nuevo.Nombre);
         Console.WriteLine(nuevo.Telefono);
+    }
+
+    public void CambiarEstado(){
+        if (Estado== Estados.Pendiente)
+        {
+            Estado=Estados.Entregado;
+        }else
+        {
+            Estado=Estados.Pendiente;
+        }
     }
 }

@@ -30,4 +30,22 @@ class Cadete
         pedidos.Remove(borrar);
         return borrar;
     }
+
+    public float JornalACobrar(){
+        int entregados=0;
+        foreach (var item in pedidos)
+        {
+            if (item.Estado == Estados.Entregado)
+            {
+                entregados= entregados + 1;
+            }
+        }
+        return entregados * 500;
+    }
+
+    public void CambiarEstado(int num){
+        Pedido cambiar =  pedidos.FirstOrDefault(p=> p.Nro == num);
+        cambiar.CambiarEstado();
+
+    }
 }

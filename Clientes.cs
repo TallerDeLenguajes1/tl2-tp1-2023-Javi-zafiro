@@ -1,9 +1,5 @@
 namespace claseCliente;
 
-enum estados
-{
-    pendiente, entregado
-}
 
 class Cliente
 {
