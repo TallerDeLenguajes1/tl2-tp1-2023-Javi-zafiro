@@ -8,15 +8,20 @@ class Cliente
     private int telefono;
     private string referenciaDireccion;
 
-    public string Nombre{get => nombre; set=> nombre=value;}
-    public string Direccion{get => direccion; set=> direccion=value;}
-    public int Telefono{get => telefono; set=> telefono=value;}
-    public string ReferenciaDireccion{get => referenciaDireccion; set=> referenciaDireccion=value;}
-
     public Cliente (string nom, string dir, int tel, string refe){
         nombre=nom;
         direccion=dir;
         telefono=tel;
         referenciaDireccion=refe;
+    }
+
+    public void VerDireccion(){
+        Console.WriteLine(direccion);
+        Console.WriteLine(referenciaDireccion);
+    }
+
+    public void VerDatos(){
+        Console.WriteLine(nombre);
+        Console.WriteLine(telefono);
     }
 }

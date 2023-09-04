@@ -6,6 +6,6 @@ cadete -agregacion- pedido
 pedido -composicion- cliente
 
 *)
-cadeteria: CrearPedido, AgregarCadete, MoverPedido
+cadeteria: CrearPedido, AgregarCadete, MoverPedido, AsignarPedido
 cadete: AgregarPedido, EliminarPedido, CambiarEstado
 
