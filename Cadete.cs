@@ -8,7 +8,7 @@ class Cadete
     private string nombre;
     private string direccion;
     private int telefono;
-    List<Pedido> pedidos= null;
+    private List<Pedido> pedidos= null;
 
     public Cadete(int n, string nom, string dir, int tel)
     {
@@ -16,7 +16,7 @@ class Cadete
         nombre=nom;
         direccion=dir;
         telefono=tel;
-        pedidos=new List<Pedido>();
+        this.pedidos=new List<Pedido>();
     }
 
     public int Id { get => id; set => id = value; }
@@ -27,7 +27,13 @@ class Cadete
 
     public Pedido MoverPedido(int numero){
         Pedido borrar = pedidos.FirstOrDefault(p=> p.Nro == numero);
-        pedidos.Remove(borrar);
+        if (borrar != null)
+        {
+            pedidos.Remove(borrar);
+        }else
+        {
+            Console.WriteLine("pedido no encontrado");
+        }
         return borrar;
     }
 
@@ -45,7 +51,34 @@ class Cadete
 
     public void CambiarEstado(int num){
         Pedido cambiar =  pedidos.FirstOrDefault(p=> p.Nro == num);
-        cambiar.CambiarEstado();
+        if (cambiar != null)
+        {
+            cambiar.CambiarEstado();
+        }else
+        {
+            Console.WriteLine("pedido no encontrado");
+        }
+    }
 
+    public void VerDireccionDePedido(int numeroDePedido){
+        Pedido pedidoAEntregar =  pedidos.FirstOrDefault(p=> p.Nro == numeroDePedido);
+        if (pedidoAEntregar != null)
+        {
+            pedidoAEntregar.VerDireccionCliente();
+        }else
+        {
+            Console.WriteLine("pedido no encontrado");
+        }
+    }
+
+    public void VerClienteEntregarPedido(int numeroDePedido){
+        Pedido pedidoAEntregar =  pedidos.FirstOrDefault(p=> p.Nro == numeroDePedido);
+        if (pedidoAEntregar != null)
+        {
+            pedidoAEntregar.VerDatosCliente();
+        }else
+        {
+            Console.WriteLine("pedido no encontrado");
+        }
     }
 }
