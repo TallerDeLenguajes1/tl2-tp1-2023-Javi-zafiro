@@ -1,0 +1,14 @@
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\bin\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.exe
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\bin\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.deps.json
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\bin\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.runtimeconfig.json
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\bin\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.dll
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\bin\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.pdb
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.AssemblyInfoInputs.cache
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.AssemblyInfo.cs
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.csproj.CoreCompileInputs.cache
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.dll
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\refint\tl2-tp1-2023-Javi-zafiro.dll
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.pdb
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\tl2-tp1-2023-Javi-zafiro.genruntimeconfig.cache
+C:\Users\Javier\OneDrive\Documentos\2023\taller\tl2-tp1-2023-Javi-zafiro\obj\Debug\net7.0\ref\tl2-tp1-2023-Javi-zafiro.dll
