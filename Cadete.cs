@@ -40,6 +40,16 @@ class Cadete
     }
 
     public float JornalACobrar(){
+        int entregados=totalEntregados();
+        return entregados * 500;
+    }
+
+    public float promedioEnvios(){
+        int entregados=totalEntregados();
+        return entregados / pedidos.Count;
+    }
+
+    public int totalEntregados(){
         int entregados=0;
         foreach (var item in pedidos)
         {
@@ -48,7 +58,7 @@ class Cadete
                 entregados= entregados + 1;
             }
         }
-        return entregados * 500;
+        return entregados;
     }
 
     public void CambiarEstado(int num){
