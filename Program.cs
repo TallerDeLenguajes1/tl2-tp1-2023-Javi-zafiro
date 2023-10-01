@@ -12,7 +12,7 @@ internal class Program
             Console.WriteLine("Interfas de Cadeteria");
             int menu=-1;
             bool salida=true;
-            List<Pedido> listaPedidos = new List<Pedido>();
+
             do
             {
                 Console.WriteLine("que desea realizar?");
