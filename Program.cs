@@ -1,6 +1,5 @@
-﻿using clasesCadeteria;
-using claseCadetes;
-using clasePedido;
+﻿using Cadeterias;
+
 using System.Linq;
 
 internal class Program

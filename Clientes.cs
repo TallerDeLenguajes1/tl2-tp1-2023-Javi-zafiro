@@ -1,4 +1,4 @@
-namespace claseCliente;
+namespace Cadeterias;
 
 
 class Cliente
@@ -15,9 +15,9 @@ class Cliente
         referenciaDireccion=refe;
     }
 
-    public void VerDireccion(){
-        Console.WriteLine(direccion);
-        Console.WriteLine(referenciaDireccion);
+    public string VerDireccion(){
+        string dire= "Direccion: "+direccion+", Referencia: "+referenciaDireccion;
+        return dire;
     }
 
     public void VerDatos(){

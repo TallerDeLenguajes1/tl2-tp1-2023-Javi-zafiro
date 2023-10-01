@@ -1,5 +1,5 @@
-namespace clasePedido;
-using claseCliente;
+namespace Cadeterias;
+
 
 enum Estados
 {
@@ -11,10 +11,12 @@ class Pedido
     private string obs;
     private Cliente nuevo=null;
     private Estados estado ;
+    private int idCadete=-1;
 
     
     public int Nro{get=> nro; set=> nro=value;}
     public Estados Estado { get => estado; set => estado = value; }
+    public int IdCadete { get => idCadete; set => idCadete = value; }
 
     public Pedido(int numero, string observacion, string nom, string dir, int tel, string refe){
         nro=numero;
@@ -24,10 +26,15 @@ class Pedido
     }
 
     public void VerDireccionCliente(){
-        nuevo.VerDireccion();
+        string dire = nuevo.VerDireccion();
+        Console.WriteLine(dire);
     }
     public void VerDatosCliente(){
         nuevo.VerDatos();
+    }
+
+    public void AsignarPedido(int idcadete){
+        idCadete=idcadete;
     }
 
     public void CambiarEstado(){
