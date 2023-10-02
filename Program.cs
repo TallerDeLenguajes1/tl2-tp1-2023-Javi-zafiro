@@ -1,5 +1,6 @@
-﻿using Cadeterias;
-
+﻿using clasesCadeteria;
+using claseCadetes;
+using clasePedido;
 using System.Linq;
 
 internal class Program
@@ -12,7 +13,7 @@ internal class Program
             Console.WriteLine("Interfas de Cadeteria");
             int menu=-1;
             bool salida=true;
-
+            List<Pedido> listaPedidos = new List<Pedido>();
             do
             {
                 Console.WriteLine("que desea realizar?");
