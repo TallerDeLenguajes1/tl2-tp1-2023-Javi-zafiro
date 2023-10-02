@@ -1,23 +1,25 @@
-namespace clasesCadeteria;
-using claseCadetes;
-using clasePedido;
+namespace Cadeterias;
+
 
 class Cadeteria
 {
     private string nombre;
     private int telefono;
     private List<Cadete> listaCadetes = null;
+    private List<Pedido> listaPedidos = null;
     private int nroUltimoPedido;
 
     public string Nombre { get => nombre; set => nombre = value; }
     public int NroUltimoPedido { get => nroUltimoPedido; set => nroUltimoPedido = value; }
     internal List<Cadete> ListaCadetes { get => listaCadetes; set => listaCadetes = value; }
+    internal List<Pedido> ListaPedidos { get => listaPedidos; set => listaPedidos = value; }
 
     public Cadeteria(string nom, int tel)
     {
         Nombre=nom;
         telefono = tel;
         ListaCadetes = new List<Cadete>();
+        ListaPedidos = new List<Pedido>();
         NroUltimoPedido = 0;
     }
     public void AgregarCadete(string nombre, int telefono, string direccion){
@@ -33,31 +35,41 @@ class Cadeteria
         return nuevo;
     }
 
-    public void AsignarPedido(Pedido mover, int idCadete){
+    public void AsignarCadeteAPedido(int idPedido, int idCadete){
         Cadete cadete =  ListaCadetes.FirstOrDefault(l=> l.Id == idCadete);
         if (cadete != null)
         {
-            cadete.AgregarPedido(mover);
+            Pedido pedido = ListaPedidos.FirstOrDefault(p=> p.Nro == idPedido);
+            pedido.AsignarPedido(idCadete);
         }else
         {
-            Console.WriteLine("error cadete insexistente");
+            Console.WriteLine("error cadete inexistente");
         }
     }
 
     public void MoverPedido(int idCadeteRemover, int idCadeteAsignar, int nroPedido){
-        Cadete cadete =  ListaCadetes.FirstOrDefault(l=> l.Id == idCadeteRemover);
-        if (cadete != null)
+
+        Cadete cadete1 =  ListaCadetes.FirstOrDefault(l=> l.Id == idCadeteRemover);
+        Cadete cadete2 =  ListaCadetes.FirstOrDefault(l=> l.Id == idCadeteAsignar);
+        if (cadete1 != null && cadete2 !=null)
         {
-            Pedido mover = cadete.MoverPedido(nroPedido);
+            Pedido mover = ListaPedidos.FirstOrDefault(p=> p.Nro == nroPedido);
             if (mover != null)
             {
-                AsignarPedido(mover, idCadeteAsignar);
+                mover.AsignarPedido(idCadeteAsignar);
+            }else
+            {
+                Console.WriteLine("error pedido inexistente");
             }
         }else
         {
-            Console.WriteLine("error cadete insexistente");
+            Console.WriteLine("error cadete inexistente");
         }
 
+    }
+    public void CambiarEstadoPedido(int idpedido){
+        Pedido cambiar = ListaPedidos.FirstOrDefault(p=> p.Nro == idpedido);
+        cambiar.CambiarEstado();
     }
     private void asignarLista(List<Cadete> list){
         ListaCadetes=list;
@@ -107,5 +119,19 @@ class Cadeteria
         List<Cadete> lista = Cadete.RecuperarDatosCadetes();
         cadeteria.asignarLista(lista);
         return cadeteria;
+    }
+
+    public float JornalACobrar(int idcadete){
+        float total=0;
+        int cantPedidos=0;
+        foreach (var item in listaPedidos)
+        {
+            if (item.IdCadete==idcadete && item.Estado==Estados.Entregado)
+            {
+                cantPedidos++;
+            }
+        }
+        total=cantPedidos*500;
+        return total;
     }
 }
