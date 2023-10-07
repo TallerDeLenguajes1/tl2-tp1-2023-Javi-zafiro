@@ -1,10 +1,10 @@
 namespace Cadeterias;
 
 
-class Cadeteria
+public class Cadeteria
 {
     private string nombre;
-    private int telefono;
+    private string telefono;
     private List<Cadete> listaCadetes = null;
     private List<Pedido> listaPedidos = null;
     private int nroUltimoPedido;
@@ -13,16 +13,17 @@ class Cadeteria
     public int NroUltimoPedido { get => nroUltimoPedido; set => nroUltimoPedido = value; }
     internal List<Cadete> ListaCadetes { get => listaCadetes; set => listaCadetes = value; }
     internal List<Pedido> ListaPedidos { get => listaPedidos; set => listaPedidos = value; }
+    public string Telefono { get => telefono; set => telefono = value; }
 
-    public Cadeteria(string nom, int tel)
+    public Cadeteria(string nom, string tel)
     {
         Nombre=nom;
-        telefono = tel;
+        Telefono = tel;
         ListaCadetes = new List<Cadete>();
         ListaPedidos = new List<Pedido>();
         NroUltimoPedido = 0;
     }
-    public void AgregarCadete(string nombre, int telefono, string direccion){
+    public void AgregarCadete(string nombre, string telefono, string direccion){
         int n = ListaCadetes.Count();
         Cadete nuevo = new Cadete(n, nombre, direccion, telefono);
         ListaCadetes.Add(nuevo);
@@ -74,52 +75,7 @@ class Cadeteria
     private void asignarLista(List<Cadete> list){
         ListaCadetes=list;
     }
-   public void GuardarDatosCSV()
-    {
-        string directorio = Directory.GetCurrentDirectory();
-        string archivo = Path.Combine(directorio, "Cadeteria.cvs");
-        using (StreamWriter writer = new StreamWriter(archivo))
-        {
-            writer.WriteLine($"Nombre,Telefono,NumeroUltimoPedido");
-            writer.WriteLine($"{Nombre},{telefono},{NroUltimoPedido}");
-        }
-        Cadete.GuardarDatosCadetes(ListaCadetes);
-    }
-
-    public static Cadeteria RecuperarDatosCadeteria()
-    {
-        string directorio = Directory.GetCurrentDirectory();
-        string archivo = Path.Combine(directorio, "Cadeteria.cvs");
-        Cadeteria cadeteria = null;
-
-        if (File.Exists(archivo))
-        {
-            string[] lineas = File.ReadAllLines(archivo);
-
-            if (lineas.Length > 1)
-            {
-                var propiedades = lineas[0].Split(',');
-                var valores = lineas[1].Split(',');
-
-                if (propiedades.Length == valores.Length)
-                {
-                    // Obtener los valores necesarios
-                    string nombre = valores[0];
-                    int telefono = int.Parse(valores[1]);
-                    int nroUltimoPedido = int.Parse(valores[2]);
-
-                    // Crear una instancia de Cadeteria con los valores recuperados
-                    cadeteria = new Cadeteria(nombre, telefono)
-                    {
-                        NroUltimoPedido = nroUltimoPedido
-                    };
-                }
-            }
-        }
-        List<Cadete> lista = Cadete.RecuperarDatosCadetes();
-        cadeteria.asignarLista(lista);
-        return cadeteria;
-    }
+   
 
     public float JornalACobrar(int idcadete){
         float total=0;

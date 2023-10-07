@@ -1,7 +1,7 @@
 namespace Cadeterias;
 
 
-class Cliente
+public class Cliente
 {
     private string nombre;
     private string direccion;

@@ -1,11 +1,11 @@
 namespace Cadeterias;
 
 
-enum Estados
+public enum Estados
 {
     Pendiente, Entregado
 }
-class Pedido
+public class Pedido
 {
     private int nro;
     private string obs;
