@@ -41,7 +41,7 @@ public class Cadeteria
         if (cadete != null)
         {
             Pedido pedido = ListaPedidos.FirstOrDefault(p=> p.Nro == idPedido);
-            pedido.AsignarPedido(idCadete);
+            pedido.IdCadete=idCadete;
         }else
         {
             Console.WriteLine("error cadete inexistente");
@@ -57,7 +57,7 @@ public class Cadeteria
             Pedido mover = ListaPedidos.FirstOrDefault(p=> p.Nro == nroPedido);
             if (mover != null)
             {
-                mover.AsignarPedido(idCadeteAsignar);
+                mover.IdCadete=idCadeteAsignar;
             }else
             {
                 Console.WriteLine("error pedido inexistente");

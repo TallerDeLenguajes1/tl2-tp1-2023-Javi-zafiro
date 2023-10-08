@@ -17,10 +17,11 @@ public class Pedido
     public int Nro{get=> nro; set=> nro=value;}
     public Estados Estado { get => estado; set => estado = value; }
     public int IdCadete { get => idCadete; set => idCadete = value; }
+    public string Obs { get => obs; set => obs = value; }
 
     public Pedido(int numero, string observacion, string nom, string dir, int tel, string refe){
         nro=numero;
-        obs=observacion;
+        Obs=observacion;
         Estado=Estados.Pendiente;
         nuevo=new Cliente(nom, dir, tel, refe);
     }
@@ -34,9 +35,6 @@ public class Pedido
         return datos;
     }
 
-    public void AsignarPedido(int idcadete){
-        idCadete=idcadete;
-    }
 
     public void CambiarEstado(){
         if (Estado== Estados.Pendiente)
