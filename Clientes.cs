@@ -20,8 +20,8 @@ public class Cliente
         return dire;
     }
 
-    public void VerDatos(){
-        Console.WriteLine(nombre);
-        Console.WriteLine(telefono);
+    public string VerDatos(){
+        string datos= "Nombre: "+nombre+", Telefono: "+telefono;
+        return datos;
     }
 }

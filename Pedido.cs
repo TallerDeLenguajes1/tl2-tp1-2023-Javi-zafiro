@@ -25,12 +25,13 @@ public class Pedido
         nuevo=new Cliente(nom, dir, tel, refe);
     }
 
-    public void VerDireccionCliente(){
+    public string VerDireccionCliente(){
         string dire = nuevo.VerDireccion();
-        Console.WriteLine(dire);
+        return dire;
     }
-    public void VerDatosCliente(){
-        nuevo.VerDatos();
+    public string VerDatosCliente(){
+        string datos = nuevo.VerDatos();
+        return datos;
     }
 
     public void AsignarPedido(int idcadete){
